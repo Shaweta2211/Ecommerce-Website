@@ -1,26 +1,29 @@
 import React from "react";
 import "../assets/css/style.css";
+import modernbag from "../assets/images/bags1.jpg"
+import seasoncollection from "../assets/images/small-purse.jpg"
+import shoes from "../assets/images/shoes.avif"
 
 const products = [
   {
     id: 1,
     name: "Modern Backpack",
     price: "$199",
-    image: "../src/assets/images/bags1.jpg",
+    image: modernbag,
     alt: "Modern Backpack",
   },
   {
     id: 2,
     name: "Season Collection",
     price: "$199",
-    image: "../src/assets/images/small-purse.jpg",
+    image: seasoncollection,
     alt: "Start From",
   },
   {
     id: 3,
     name: "Stradivarius Top Trainer",
     price: "$199",
-    image: "../src/assets/images/shoes.avif",
+    image: shoes,
     alt: "Start From",
   },
 ];
