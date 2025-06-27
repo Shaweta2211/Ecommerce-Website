@@ -1,13 +1,19 @@
 import React, { useState, useEffect } from "react";
 import "../assets/css/style.css";
 
+// Import flag images directly
+import usaFlag from "../assets/images/flag.png";
+import ukFlag from "../assets/images/uk.avif";
+import indiaFlag from "../assets/images/india.avif";
+
 export function Header() {
   const messages = [
     "Summer sale discount 70%",
     "Time Refresh to your wardrobe",
     <>
-      Spring Fashion sale <span>Shop Now{" "}
-        <i className="fa-solid fa-arrow-trend-up"></i>
+      Spring Fashion sale{" "}
+      <span>
+        Shop Now <i className="fa-solid fa-arrow-trend-up"></i>
       </span>
     </>,
   ];
@@ -16,11 +22,11 @@ export function Header() {
   const [selectedCurrency, setSelectedCurrency] = useState("USD");
   const [selectedLanguage, setSelectedLanguage] = useState("English");
 
-  // Country and language options
+  // Updated with imported flag images
   const currencies = [
-    { country: "USA", code: "USD", flag: "flag.png" },
-    { country: "UK", code: "GBP", flag: "uk.avif" },
-    { country: "India", code: "INR", flag: "india.avif" },
+    { country: "USA", code: "USD", flag: usaFlag },
+    { country: "UK", code: "GBP", flag: ukFlag },
+    { country: "India", code: "INR", flag: indiaFlag },
   ];
 
   const languages = ["English", "Spanish", "German"];
@@ -62,9 +68,11 @@ export function Header() {
             <div className="header-right">
               <div className="currency-dropdown">
                 <img
-                  src={`../src/assets/images/${currencies.find(
-                    (currency) => currency.code === selectedCurrency
-                  ).flag}`}
+                  src={
+                    currencies.find(
+                      (currency) => currency.code === selectedCurrency
+                    ).flag
+                  }
                   alt="flag"
                   className="currency-flag"
                 />
