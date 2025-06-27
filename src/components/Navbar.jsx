@@ -3,13 +3,14 @@ import { NavLink } from "react-router-dom";
 
 import React from "react";
 import "../assets/css/style.css"
+import logo from "../assets/images/logo.svg"
 
 export function Navbar() {
     return (
         <nav className="navbar navbar-expand-lg navbar-light bg-white ">
             <div className="container" >
                 <a className="navbar-brand" href="#">
-                    <img src="..\src\assets\images\logo.svg" alt="log img" height="40" />
+                    <img src={logo} alt="log img" height="40" />
                 </a>
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                     aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
