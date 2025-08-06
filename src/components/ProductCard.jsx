@@ -95,7 +95,8 @@ export const ProductCard = () => {
       </div>
 
       <div className="read-more-container">
-        <a href="/about" className="btn btn-primary">Read More</a>
+       <Link to="/about" className="btn btn-primary">Read More</Link>
+
       </div>
     </div>
   );
