@@ -12,6 +12,11 @@ import ContactUs from './pages/ContactUs';
 import { Blog } from './pages/Blog';
 import AboutUs from './pages/AboutUs';
 import ProductDetails from './components/ProductDetails';
+import Accessories from './components/Accessories';
+import Glasses from './components/Glasses'
+import Sneakers from './components/Sneakers'
+import Bags from './components/Bags' 
+import Mens from './components/Mens'
 
 function App() {
   return (
@@ -27,6 +32,12 @@ function App() {
         <Route path="/about" element={<AboutUs />} />
         <Route path="/contact" element={<ContactUs />} />
         <Route path="/blog" element={<Blog />} />
+        <Route path="/accessories" element={<Accessories />} />
+        <Route path="/glasses" element={<Glasses />} />
+        <Route path="/sneakers" element={<Sneakers />} />
+        <Route path="/bags" element={<Bags />} />
+        <Route path="/mens" element={<Mens />} />
+
         <Route path="*" element={<div>404 Error - Page Not Found</div>} />
       </Routes>
 

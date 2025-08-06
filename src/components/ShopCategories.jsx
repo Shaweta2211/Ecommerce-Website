@@ -5,26 +5,28 @@ import sunglassesImg from "../assets/images/sunglass.jpg";
 import sneakersImg from "../assets/images/sneakers.jpg";
 import bagsImg from "../assets/images/bags.jpg";
 import collectionImg from "../assets/images/collection-15.jpg";
-import React, { useRef, useState } from 'react';
-// Import Swiper React components
-import { Swiper, SwiperSlide } from 'swiper/react';
 
-// Import Swiper styles
+import React from 'react';
+import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import { Navigation } from 'swiper/modules';
+import { Link } from "react-router-dom";
+
 export function ShopCategories() {
   const categories = [
-    { name: "Accessories", img: accessoriesImg },
-    { name: "Sunglasses", img: sunglassesImg },
-    { name: "Sneakers", img: sneakersImg },
-    { name: "Bags", img: bagsImg },
-    { name: "Men", img: collectionImg },
+    { name: "Accessories", img: accessoriesImg, link: "/accessories" },
+    { name: "Sunglasses", img: sunglassesImg, link: "/glasses" },
+    { name: "Sneakers", img: sneakersImg, link: "/sneakers" },
+    { name: "Bags", img: bagsImg, link: "/bags" },
+    { name: "Men", img: collectionImg, link: "/mens"},
   ];
 
   return (
     <div className="container my-5">
-      <h2 className="text-center mb-4" style={{ fontWeight: 500, fontSize: 40 }}>Shop by categories</h2>
+      <h2 className="text-center mb-4" style={{ fontWeight: 500, fontSize: 40 }}>
+        Shop by categories
+      </h2>
 
       <Swiper
         slidesPerView={4}
@@ -41,9 +43,16 @@ export function ShopCategories() {
                 alt={category.name}
                 className="img-fluid rounded"
               />
-              <button className="category-button" type="submit">
-                {category.name}
-              </button>
+
+              {category.link ? (
+                <Link to={category.link} className="category-button">
+                  {category.name}
+                </Link>
+              ) : (
+                <button className="category-button" type="button">
+                  {category.name}
+                </button>
+              )}
             </div>
           </SwiperSlide>
         ))}
