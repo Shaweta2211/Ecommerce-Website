@@ -24,11 +24,11 @@ const footerInfo = {
 };
 
 const socialIcons = [
-  { iconClass: "fa-brands fa-facebook", url: "#" },
-  { iconClass: "fa-brands fa-x-twitter", url: "#" },
-  { iconClass: "fa-brands fa-instagram", url: "#" },
-  { iconClass: "fa-brands fa-tiktok", url: "#" },
-  { iconClass: "fa-brands fa-pinterest", url: "#" },
+  { iconClass: "fa-brands fa-facebook", url: "https://facebook.com/yourpage" },
+  { iconClass: "fa-brands fa-x-twitter", url: "https://twitter.com/yourpage" },
+  { iconClass: "fa-brands fa-instagram", url: "https://instagram.com/yourpage" },
+  { iconClass: "fa-brands fa-tiktok", url: "https://tiktok.com/@yourpage" },
+  { iconClass: "fa-brands fa-pinterest", url: "https://pinterest.com/yourpage" },
 ];
 
 const footerLinks = [
@@ -86,7 +86,13 @@ export function Footer() {
             </p>
             <div className="d-flex mt-3">
               {socialIcons.map((social, index) => (
-                <a key={index} href={social.url} className="me-3 text-dark">
+                <a
+                  key={index}
+                  href={social.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="me-3 text-dark"
+                >
                   <i className={social.iconClass} style={{ fontSize: "20px" }}></i>
                 </a>
               ))}
